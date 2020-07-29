@@ -1,3 +1,5 @@
+package binarysearch
+
 class GuessNumber() {
 
     fun guess(a: Int): Int {

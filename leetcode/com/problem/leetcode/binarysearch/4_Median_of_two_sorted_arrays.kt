@@ -1,3 +1,5 @@
+package binarysearch
+
 class MedianOf2Arrays {
 
     companion object {

@@ -1,3 +1,5 @@
+package binarysearch
+
 private const val INVALID_INDEX = -1
 
 class Search2DMatrix {

@@ -1,3 +1,5 @@
+package binarysearch
+
 class Sqrt {
     fun sqrt(n: Int): Int {
         return findSqrt(n, 0, n)

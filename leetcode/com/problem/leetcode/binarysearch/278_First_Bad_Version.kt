@@ -1,3 +1,5 @@
+package binarysearch
+
 class FirstBadVersion() {
 
     //for testing
