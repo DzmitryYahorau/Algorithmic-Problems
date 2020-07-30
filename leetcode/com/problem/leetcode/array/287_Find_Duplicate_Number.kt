@@ -1,4 +1,4 @@
-import kotlin.math.abs
+package array
 
 class FindDuplicateNumber {
 
