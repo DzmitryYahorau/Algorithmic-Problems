@@ -13,8 +13,6 @@ class ArrayPartitionI {
         }
         return result
     }
-
-
 }
 
 fun main() {
