@@ -20,7 +20,6 @@ class Solution {
                 sell(prevPrice)
             }
 
-
             if ((price >= prevPrice) && hasStocks() && isLastPrice) {
                 sell(price)
             }
@@ -39,6 +38,29 @@ class Solution {
     private fun sell(price: Int) {
         profit += (price - lowPrice)
         lowPrice = -1
+    }
+}
+
+class Solution2 {
+
+    /**
+     * Source:
+     * [https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.]
+     */
+    fun maxProfit(prices: IntArray): Int {
+        var i = 0
+        var buy: Int
+        var sell: Int
+        var profit = 0
+        val N = prices.size - 1
+        while (i < N) {
+            while (i < N && prices[i + 1] <= prices[i]) i++
+            buy = prices[i]
+            while (i < N && prices[i + 1] > prices[i]) i++
+            sell = prices[i]
+            profit += sell - buy
+        }
+        return profit
     }
 }
 
