@@ -1,5 +1,7 @@
 package array
 
+import kotlin.math.max
+
 class Solution {
 
     private var lowPrice = -1 // not use 0!, can be in input set
@@ -61,6 +63,19 @@ class Solution2 {
             profit += sell - buy
         }
         return profit
+    }
+
+//    https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/564729/Java-Simple-Code-DP
+    fun maxProfit2(A: IntArray): Int {
+        val n = A.size
+        var lastBuy = -A[0]
+        var lastSold = 0
+        if (n == 0) return 0
+        for (i in 1 until n) {
+            lastBuy = max(lastBuy, lastSold - A[i])
+            lastSold = max(lastSold, lastBuy + A[i])
+        }
+        return lastSold
     }
 }
 
