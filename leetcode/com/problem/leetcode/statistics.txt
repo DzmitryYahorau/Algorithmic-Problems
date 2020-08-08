@@ -9,8 +9,10 @@ July
 Aug
  1: 419, 122, 216, 18, 11
  2: 204, 224, 442, 697
+ 8: 357
+ 9:
 
-// don't solve by myself
+// didn't solve by myself
 Group A:
 
 //solved, but was a headache
