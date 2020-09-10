@@ -12,8 +12,16 @@ Aug
  8: 357
  9:
 
+ Sep:
+ 11: 94, 394
+
+
 // didn't solve by myself
 Group A:
 
 //solved, but was a headache
 Group B:
+
+// almost solved
+Group C:
+394
