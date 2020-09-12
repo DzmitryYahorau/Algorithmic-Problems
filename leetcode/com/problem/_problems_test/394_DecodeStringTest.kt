@@ -34,4 +34,11 @@ class DecodeStringTest {
         val result = solution.decodeString(s)
         assert(result == "abcabccdcdcdef")
     }
+
+    @Test
+    fun input4() {
+        val s = "20[a]"
+        val result = solution.decodeString(s)
+        assertEquals(result, "aaaaaaaaaaaaaaaaaaaa")
+    }
 }

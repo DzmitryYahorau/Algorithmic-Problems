@@ -14,6 +14,7 @@ Aug
 
  Sep:
  11: 94, 394
+ 12: 232, 341, 110
 
 
 // didn't solve by myself
@@ -24,4 +25,8 @@ Group B:
 
 // almost solved
 Group C:
-394
+394, 110
+
+//easy
+Group D:
+341
