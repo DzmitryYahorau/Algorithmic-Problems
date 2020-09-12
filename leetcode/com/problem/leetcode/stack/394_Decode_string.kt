@@ -12,7 +12,14 @@ class Solution394 {
         var i = 0
         while (i in s.indices) {
             when {
-                s[i].isDigit() -> numbers.push(Character.getNumericValue(s[i++]))
+                s[i].isDigit() -> {
+                    var number = ""
+                    while (s[i].isDigit()) {
+                        number += s[i]
+                        i++
+                    }
+                    numbers.push(number.toInt())
+                }
                 s[i].isLetter() -> res += s[i++]
                 (s[i] == '[') -> {
                     resultStack.push(res)
@@ -20,18 +27,19 @@ class Solution394 {
                     i++
                 }
                 (s[i] == ']') -> {
-                    val temp = StringBuilder()
-
                     val substring = resultStack.pop()
                     val repeatTimes = numbers.pop()
 
-                    temp.append(substring)
+                    val temp = StringBuilder().apply {
 
-                    repeat(repeatTimes) {
-                        temp.append(res)
-                    }
+                        append(substring)
 
-                    res = temp.toString()
+                        repeat(repeatTimes) {
+                            append(res)
+                        }
+                    }.toString()
+
+                    res = temp
                     i++
                 }
             }
