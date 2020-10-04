@@ -1,10 +1,11 @@
 package _main_data_structure_impl.stack
 
-interface Stack {
+interface Stack<Item> {
 
-    fun push(item: String)
+    fun push(item: Item)
 
-    fun pop(): String?
+    fun pop(): Item?
 
     fun isEmpty(): Boolean
+
 }

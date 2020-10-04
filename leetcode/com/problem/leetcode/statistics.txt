@@ -15,6 +15,11 @@ Aug
  Sep:
  11: 94, 394
  12: 232, 341, 110
+ 13: 173,
+
+ Okt:
+ 4. 133
+
 
 
 // didn't solve by myself
@@ -30,3 +35,6 @@ Group C:
 //easy
 Group D:
 341
+
+Solved with help:
+133, 207

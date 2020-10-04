@@ -41,7 +41,7 @@ class BinarySearchTree : SymbolTable {
     override fun size(): Int = size(root)
 
     override fun keys(): List<Key> {
-        val queue = ArrayQueue()
+        val queue = ArrayQueue<Key>()
         inorderTraversal(root, queue)
         return queue.values()
     }
@@ -94,7 +94,7 @@ class BinarySearchTree : SymbolTable {
 
     private fun size(node: Node?): Int = node?.count ?: 0
 
-    private fun inorderTraversal(node: Node?, queue: Queue) {
+    private fun inorderTraversal(node: Node?, queue: Queue<Key>) {
         if (node == null) return
         inorderTraversal(node.left, queue)
         queue.enqueue(node.key)

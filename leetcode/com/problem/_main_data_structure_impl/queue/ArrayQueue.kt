@@ -1,12 +1,12 @@
 package _main_data_structure_impl.queue
 
-class ArrayQueue : Queue {
+class ArrayQueue<Item : Any> : Queue<Item> {
 
-    private var q = Array<String?>(1) { null }
+    private var q: Array<Item?> = arrayOfNulls<Any?>(1) as Array<Item?>
     private var head = 0
     private var tail = 0
 
-    override fun enqueue(item: String) {
+    override fun enqueue(item: Item) {
         if (tail == q.size) {
             resize(newCapacity = q.size * 2)
         }
@@ -14,7 +14,7 @@ class ArrayQueue : Queue {
         q[tail++] = item
     }
 
-    override fun dequeue(): String? {
+    override fun dequeue(): Item? {
         val item = q[head]
         q[head++] = null
 
@@ -27,10 +27,10 @@ class ArrayQueue : Queue {
 
     override fun isEmpty(): Boolean = head == tail
 
-    fun values(): List<String> = q.mapNotNull { it }
+    fun values(): List<Item> = q.mapNotNull { it }
 
     private fun resize(newCapacity: Int) {
-        val copy = Array<String?>(newCapacity) { null }
+        val copy: Array<Item?> = arrayOfNulls<Any?>(newCapacity) as Array<Item?>
         for (i in q.indices) {
             copy[i] = q[i]
         }
@@ -39,7 +39,7 @@ class ArrayQueue : Queue {
 }
 
 fun main() {
-    val queue: Queue = ArrayQueue()
+    val queue: Queue<String> = ArrayQueue()
 
     queue.enqueue("1")
     queue.enqueue("2")
