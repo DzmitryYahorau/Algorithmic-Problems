@@ -1,11 +1,11 @@
 package _main_data_structure_impl.queue
 
-class LinkedQueue : Queue {
+class LinkedQueue<Item> : Queue<Item> {
 
     private var first: Node? = null
     private var last: Node? = null
 
-    override fun enqueue(item: String) {
+    override fun enqueue(item: Item) {
         val oldLast = last
         last = Node(item = item, next = null)
 
@@ -16,7 +16,7 @@ class LinkedQueue : Queue {
         }
     }
 
-    override fun dequeue(): String? {
+    override fun dequeue(): Item? {
         val item = first?.item
         first = first?.next
         if (isEmpty()) {
@@ -26,10 +26,12 @@ class LinkedQueue : Queue {
     }
 
     override fun isEmpty(): Boolean = first == null
+
+    inner class Node(val item: Item, var next: Node?)
 }
 
 fun main() {
-    val queue: Queue = LinkedQueue()
+    val queue: Queue<String> = LinkedQueue()
 
     queue.enqueue("1")
     queue.enqueue("2")

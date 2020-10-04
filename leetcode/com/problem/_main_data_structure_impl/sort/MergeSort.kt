@@ -1,6 +1,6 @@
 package _main_data_structure_impl.sort
 
-fun sort(a: IntArray) {
+fun mergeSort(a: IntArray) {
     val aux = IntArray(a.size)
     sort(a, aux, 0, a.size - 1)
 }
@@ -29,6 +29,6 @@ private fun merge(a: IntArray, aux: IntArray, lo: Int, mid: Int, hi: Int) {
 
 fun main() {
     val input = (0..100).shuffled().toIntArray()
-    sort(input)
+    mergeSort(input)
     println(input.joinToString(","))
 }

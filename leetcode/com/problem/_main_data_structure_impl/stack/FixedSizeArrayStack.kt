@@ -1,6 +1,6 @@
 package _main_data_structure_impl.stack
 
-class FixedSizeArrayStack(capacity: Int) : Stack {
+class FixedSizeArrayStack(capacity: Int) : Stack<String> {
     private var s = Array<String?>(capacity) { null }
     private var N = 0
 
@@ -14,7 +14,7 @@ class FixedSizeArrayStack(capacity: Int) : Stack {
 }
 
 fun main() {
-    val stack: Stack = FixedSizeArrayStack(2)
+    val stack: Stack<String> = FixedSizeArrayStack(2)
 
     stack.push("1")
     stack.push("2")

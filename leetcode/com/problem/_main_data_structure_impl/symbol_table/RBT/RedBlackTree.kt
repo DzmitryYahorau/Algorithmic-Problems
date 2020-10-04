@@ -120,13 +120,14 @@ private fun Node.rotateRight(): Node? {
     return x
 }
 
-private fun Node.flipColors(): Node? {
+private fun Node?.flipColors(): Node? {
     assert(!this.isRed())
-    assert(this.left.isRed())
-    assert(this.right.isRed())
+    assert(this?.left.isRed())
+    assert(this?.right.isRed())
 
-    color = RED
-    left?.color = BLACK
-    right?.color = BLACK
+    this?.color = RED
+    this?.left?.color = BLACK
+    this?.right?.color = BLACK
+
     return this
 }

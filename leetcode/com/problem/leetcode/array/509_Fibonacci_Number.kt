@@ -14,5 +14,3 @@ fun main() {
     val input = 2
     println(FibonacciNumber().fib(input))
 }
-
-
