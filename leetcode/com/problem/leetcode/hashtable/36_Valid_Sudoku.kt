@@ -9,33 +9,21 @@ fun isValidSudoku(board: Array<CharArray>): Boolean {
         if (!isValid(row) || !isValid(column)) return false
     }
 
-    val slices = board.asSequence().chunked(3)
+    board.asSequence()
+            .chunked(3)
+            .map { it.map { it.toList() } }
+            .forEach { slice ->
+                for (i in 0..8 step 3) {
+                    val a = slice[0].subList(i, i + 3)
+                    val b = slice[1].subList(i, i + 3)
+                    val c = slice[2].subList(i, i + 3)
 
-    slices.forEach { slice ->
-        for (i in 0..8 step 3) {
-            val a = slice[0].toList().subList(i, i + 3)
-            val b = slice[1].toList().subList(i, i + 3)
-            val c = slice[2].toList().subList(i, i + 3)
-
-            if (!isValid((a + b + c).toCharArray())) return false
-        }
-    }
-
-    return true
-}
-
-fun isValid(sequence: CharArray): Boolean {
-    val rowSet = mutableSetOf<Int>()
-    sequence.asSequence()
-            .filter { it.isDigit() }
-            .map { Character.getNumericValue(it) }
-            .forEach { num ->
-                if (!rowSet.contains(num)) {
-                    rowSet.add(num)
-                } else {
-                    return false
+                    if (!isValid((a + b + c).toCharArray())) return false
                 }
             }
 
     return true
 }
+
+fun isValid(chars: CharArray): Boolean =
+        chars.filter { it.isDigit() }.distinct().size == chars.filter { it.isDigit() }.size
