@@ -2,6 +2,7 @@ package stack
 
 import java.util.*
 
+//Smart and clean solution!
 fun isValid(s: String): Boolean {
     val stack = Stack<Char>()
     for (char in s) {
