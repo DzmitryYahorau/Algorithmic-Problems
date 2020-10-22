@@ -45,7 +45,3 @@ fun removeNthFromEnd2(head: ListNode?, n: Int): ListNode? {
     start.next = start.next?.next
     return previousNode.next
 }
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
