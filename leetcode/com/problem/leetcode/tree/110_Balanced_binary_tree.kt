@@ -31,12 +31,6 @@ class Solution110 {
     }
 }
 
-/** Definition for a binary tree node. */
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-}
-
 fun main() {
     val root = TreeNode(1).apply {
         left = null
