@@ -7,4 +7,7 @@ data class TreeNode(var `val`: Int) {
     override fun toString(): String {
         return "TreeNode(`val`=$`val`, left=$left, right=$right)"
     }
+
+    fun toValueString(): String =
+            "$`val` ${left?.toValueString()} ${right?.toValueString()}"
 }
