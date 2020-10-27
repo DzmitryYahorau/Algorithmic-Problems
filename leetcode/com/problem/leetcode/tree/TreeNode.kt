@@ -8,6 +8,9 @@ data class TreeNode(var `val`: Int) {
         return "TreeNode(`val`=$`val`, left=$left, right=$right)"
     }
 
-    fun toValueString(): String =
-            "$`val` ${left?.toValueString()} ${right?.toValueString()}"
 }
+
+fun TreeNode.toValueString(): String =
+        "$`val` ${left?.toValueString()} ${right?.toValueString()}"
+
+fun Int.toTreeNode() = TreeNode(this)
