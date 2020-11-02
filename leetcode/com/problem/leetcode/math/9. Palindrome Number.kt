@@ -11,6 +11,7 @@ private fun reversedInt(x: Int): Int {
     var temp = x
     var reversedValue = 0
     while (temp != 0) {
+        // temp % 10 - take last digit, reversedValue * 10 - make previous at first place
         reversedValue = (reversedValue * 10) + (temp % 10)
         temp /= 10
     }
