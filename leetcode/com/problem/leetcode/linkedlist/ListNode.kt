@@ -1,5 +1,10 @@
 package linkedlist
 
-class ListNode(var `val`: Int) {
+data class ListNode(var `val`: Int) {
     var next: ListNode? = null
+
+    override fun toString(): String {
+        return " val= $`val`, next= ${next.toString()}"
+    }
+
 }
