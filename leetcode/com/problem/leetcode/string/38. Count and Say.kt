@@ -58,7 +58,6 @@ fun countAndSay1(n: Int): String {
     }
     // create the sequence, starting with "1", return the nth element
     return generateSequence("1", ::next).take(n).last()
-
 }
 
 fun main() {
