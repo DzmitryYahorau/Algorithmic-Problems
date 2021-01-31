@@ -3,16 +3,12 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/leetcode/leetcode" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/BaseAlgorithms/_main_data_structure_test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/leetcode/_problems_test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/leetcode/com/problem/hackerrank" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/leetcode/com/problem/_main_data_structure_impl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/leetcode/lc_challenges" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/_main_data_structure_test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="KotlinJavaRuntime (3)" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit5.4">
         <CLASSES>
