@@ -13,10 +13,10 @@ class Solution88 {
 
         while (k < size) {
             when {
-                i >= m && j < nums2.size -> {
+                i >= m && j < n -> {
                     aux[k++] = nums2[j++]
                 }
-                j >= nums2.size && i < m -> {
+                j >= n && i < m -> {
                     aux[k++] = nums1[i++]
                 }
                 nums1[i] <= nums2[j] -> {
