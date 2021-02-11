@@ -24,4 +24,7 @@ fun sortArrayByParity(A: IntArray): IntArray {
     return A
 }
 
+//kotlin 1 line solution
+//A.partition { it % 2 ==0 }.toList().flatten().toIntArray()
+
 private fun Int.isEven(): Boolean = (this % 2 == 0)
