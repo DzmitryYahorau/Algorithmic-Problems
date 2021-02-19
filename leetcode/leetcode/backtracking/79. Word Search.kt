@@ -17,7 +17,7 @@ private fun backtracking(board: Array<CharArray>, i: Int, j: Int, word: String, 
     board[i][j] = '*'
 
 //    condition1 || condition2 || condition3 || condition4
-//will return true as soon as a condition returned true, and the rest conditions are not even calculated.
+//    will return true as soon as a condition returned true, and the rest conditions are not even calculated.
     val result = backtracking(board, i, j + 1, word, letterIndex + 1)
             || backtracking(board, i, j - 1, word, letterIndex + 1)
             || backtracking(board, i + 1, j, word, letterIndex + 1)
