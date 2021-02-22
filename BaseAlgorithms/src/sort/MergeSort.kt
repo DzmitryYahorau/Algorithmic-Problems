@@ -2,7 +2,7 @@ package sort
 
 fun mergeSort(a: IntArray) {
     val aux = IntArray(a.size)
-    sort(a, aux, 0, a.size - 1)
+    sort(a, aux, 0, a.lastIndex)
 }
 
 private fun sort(a: IntArray, aux: IntArray, lo: Int, hi: Int) {
