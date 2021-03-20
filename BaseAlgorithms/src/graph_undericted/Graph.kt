@@ -62,11 +62,6 @@ class Graph(
      */
     fun E(): Int = E
 
-    // throw an IllegalArgumentException unless {@code 0 <= v < V}
-    private fun validateVertex(v: Int) {
-        require(!(v < 0 || v >= V)) { "vertex " + v + " is not between 0 and " + (V - 1) }
-    }
-
     /**
      * Adds the undirected edge v-w to this graph.
      *
@@ -75,8 +70,6 @@ class Graph(
      * @throws IllegalArgumentException unless both `0 <= v < V` and `0 <= w < V`
      */
     fun addEdge(v: Int, w: Int) {
-        validateVertex(v)
-        validateVertex(w)
         E++
         adj[v]?.add(w)
         adj[w]?.add(v)
@@ -90,7 +83,6 @@ class Graph(
      * @throws IllegalArgumentException unless `0 <= v < V`
      */
     fun adj(v: Int): Iterable<Int>? {
-        validateVertex(v)
         return adj[v]
     }
 
@@ -102,7 +94,6 @@ class Graph(
      * @throws IllegalArgumentException unless `0 <= v < V`
      */
     fun degree(v: Int): Int {
-        validateVertex(v)
         return adj[v]?.size() ?: 0
     }
 }

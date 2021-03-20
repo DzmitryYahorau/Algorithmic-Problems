@@ -24,8 +24,9 @@ class Solution {
 
         return map[node.`val`]
     }
+
+    class Node(var `val`: Int) {
+        var neighbors: ArrayList<Node?> = ArrayList()
+    }
 }
 
-class Node(var `val`: Int) {
-    var neighbors: ArrayList<Node?> = ArrayList()
-}
