@@ -56,8 +56,6 @@ class Digraph(V: Int) {
         nodes.add(from)
         nodes.add(to)
     }
-
-    fun outdegree(v: Int): Int = adj[v]?.size ?: 0
 }
 
 fun main() {
