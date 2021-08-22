@@ -28,8 +28,24 @@ fun isPalindrome(s: String): Boolean {
     return true
 }
 
+fun isPalindromeDivAndCon(s: String): Boolean {
+    return compute(s.filter { it.isLetterOrDigit() })
+}
+
+private fun compute(s: String): Boolean {
+    if (s.isBlank()){
+        return true
+    }
+
+    return when(s.length){
+        in 0..1 -> true
+        2 -> s.first() == s.last()
+        else -> s.first().equals(s.last(), ignoreCase = true) && compute(s.substring(1 until s.lastIndex))
+    }
+}
+
 fun main() {
-    assertEquals(actual = isPalindrome("A man, a plan, a canal: Panama"), expected = true, message = "1")
-    assertEquals(actual = isPalindrome(".,"), expected = true, message = "2")
-    assertEquals(false, isPalindrome("0P"), message = "3")
+    assertEquals(actual = isPalindromeDivAndCon("A man, a plan, a canal: Panama"), expected = true, message = "1")
+    assertEquals(actual = isPalindromeDivAndCon(".,"), expected = true, message = "2")
+    assertEquals(false, isPalindromeDivAndCon("0P"), message = "3")
 }
