@@ -13,3 +13,28 @@ fun firstUniqChar(s: String): Int {
 
     return map.mapNotNull { it.value.takeIf { it >= 0 } }.firstOrNull() ?: -1
 }
+
+/**
+ * since @param [s] consists of only lowercase English letters. can be done without hashmap.
+ * Works faster, O(26) = O(1)
+ */
+fun firstUniqChar2(s: String): Int {
+    val arr = Array<Int>(26) { 0 }
+
+    for (i in s.indices){
+        val charIndex = s[i] - 'a'
+        arr[charIndex]++
+    }
+
+    for (i in s.indices){
+        val charIndex = s[i] - 'a'
+        if (arr[charIndex] == 1){
+            return i
+        }
+    }
+
+    return -1
+}
+fun main() {
+    println(firstUniqChar2("loveleetcode"))
+}
