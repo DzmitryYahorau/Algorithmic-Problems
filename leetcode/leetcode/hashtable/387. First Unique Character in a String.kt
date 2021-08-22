@@ -15,7 +15,8 @@ fun firstUniqChar(s: String): Int {
 }
 
 /**
- * since @param [s] consists of only lowercase English letters. can be done without hashmap.
+ * since @param [s] consists of only lowercase English letters.
+ * Can be done without hashmap.
  * Works faster, O(26) = O(1)
  */
 fun firstUniqChar2(s: String): Int {
