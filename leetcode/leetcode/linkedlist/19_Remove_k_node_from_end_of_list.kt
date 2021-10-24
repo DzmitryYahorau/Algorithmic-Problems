@@ -45,3 +45,28 @@ fun removeNthFromEnd2(head: ListNode?, n: Int): ListNode? {
     start.next = start.next?.next
     return previousNode.next
 }
+
+fun removeNthFromEnd3(head: ListNode?, n: Int): ListNode? {
+    var p: ListNode? = head
+    var count = 1
+    while (p?.next != null) {
+        p = p.next
+        count++
+    }
+
+    var steps = count - n
+    val dummy = ListNode(0)
+    dummy.next = head
+    var t: ListNode? = dummy
+
+    while (steps > 0) {
+        t = t?.next
+        steps--
+    }
+
+    val temp = t?.next?.next
+
+    t?.next = temp
+
+    return dummy.next
+}

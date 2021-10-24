@@ -59,3 +59,31 @@ fun levelOrder1(root: TreeNode?): List<List<Int>> {
 
     return answer
 }
+
+//second try
+fun levelOrder2(root: TreeNode?): List<List<Int>> {
+    root ?: return listOf()
+
+    val levels = mutableListOf<MutableList<Int>>()
+    val queue : Queue<TreeNode> = LinkedList<TreeNode>()
+    queue.add(root)
+
+    while(queue.isNotEmpty()){
+        val level = mutableListOf<Int>()
+
+        repeat(queue.size){
+            val node = queue.poll()
+            level.add(node.`val`)
+
+            node.left?.let{
+                queue.add(it)
+            }
+            node.right?.let{
+                queue.add(it)
+            }
+        }
+        levels.add(level)
+    }
+
+    return levels
+}

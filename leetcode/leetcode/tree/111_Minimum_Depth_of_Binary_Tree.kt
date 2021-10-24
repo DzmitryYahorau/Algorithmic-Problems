@@ -43,4 +43,4 @@ fun minDepth(root: TreeNode?): Int {
     }
 }
 
-fun TreeNode.isLeaf(): Boolean = (this.left == null) && (this.right == null)
+fun TreeNode?.isLeaf(): Boolean = (this?.left == null) && (this?.right == null)

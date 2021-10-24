@@ -22,3 +22,23 @@ class FirstBadVersion() {
         return mid
     }
 }
+
+fun isBadVersion(a: Int): Boolean {
+    return a in 10..10
+}
+
+// second try - solved the same way
+fun firstBadVersion(hi: Int, lo: Int = 0): Int {
+    if (lo > hi) return lo
+    val mid = lo + (hi-lo) / 2
+
+    val isBad = isBadVersion(mid)
+    return when {
+        isBad -> firstBadVersion(lo = lo, hi = mid-1)
+        else -> firstBadVersion(lo = mid+1, hi = hi)
+    }
+}
+
+fun main() {
+    println(firstBadVersion(10))
+}

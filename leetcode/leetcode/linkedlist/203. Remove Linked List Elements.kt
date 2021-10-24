@@ -18,3 +18,27 @@ fun removeElements(head: ListNode?, `val`: Int): ListNode? {
 // return dummy node, without pointer at the beginning
     return dummyNode.next
 }
+
+// solved in 20+ min
+fun removeElements2(head: ListNode?, `val`: Int): ListNode? {
+    if (head == null){
+        return null
+    }
+
+    var dum: ListNode? = ListNode(-1)
+
+    dum?.next = head
+
+    var t : ListNode? = dum
+
+    while (t?.next != null){
+        if (t?.next?.`val` == `val`){
+            val temp = t?.next?.next
+
+            t?.next = temp
+        } else {
+            t = t?.next
+        }
+    }
+    return dum?.next
+}

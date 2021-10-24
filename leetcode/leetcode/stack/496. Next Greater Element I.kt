@@ -23,3 +23,10 @@ fun nextGreaterElement(findNums: IntArray, nums: IntArray): IntArray {
 
     return findNums
 }
+
+fun main() {
+    val nums1 = intArrayOf(4,1,2)
+    val nums2 = intArrayOf(1,3,4,2)
+
+    println(nextGreaterElement(nums1, nums2).joinToString())
+}

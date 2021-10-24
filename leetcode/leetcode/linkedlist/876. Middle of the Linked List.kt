@@ -14,6 +14,19 @@ fun middleNode(head: ListNode?): ListNode? {
     return slow
 }
 
+//solved in ~7 min
+fun middleNode2(head: ListNode?): ListNode? {
+    var next = head?.next
+    var mid = head
+
+    while (next != null){
+        next = next?.next?.next
+        mid = mid?.next
+    }
+
+    return mid
+}
+
 fun main() {
     val root = ListNode(`val` = 4).apply {
         next = ListNode(2).apply {
