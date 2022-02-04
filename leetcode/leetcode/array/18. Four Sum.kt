@@ -1,5 +1,6 @@
 package array
 
+// check other solution (works faster) in @param:hashtable.fourSum
 class Solution18 {
 
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
